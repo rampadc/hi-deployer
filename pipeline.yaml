@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: hi-deployer
+  namespace: default
+spec:
+  params:
+    - default: deployer
+      name: name
+      type: string
+  tasks:
+    - name: hi
+      params:
+        - name: SCRIPT
+          value: |-
+            echo "$(params.name)"
+            oc ibm-pak help
+      taskRef:
+        kind: Task
+        name: ibm-pak-0.2
