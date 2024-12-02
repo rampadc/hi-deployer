@@ -1,5 +1,5 @@
 cluster:
-  version: 4.16.37
+  version: 4.16
   compute:
     masters:
       count: 3
