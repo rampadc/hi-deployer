@@ -14,7 +14,6 @@ spec:
         - name: SCRIPT
           value: |-
             echo "$(params.name)"
-            oc ibm-pak help
       taskRef:
         kind: Task
         name: ibm-pak-0.2
